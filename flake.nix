@@ -2,51 +2,37 @@
   description = "A nixvim configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = {
-    nixvim,
-    flake-parts,
-    ...
-  } @ inputs:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = [
-        "x86_64-linux"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "aarch64-darwin"
-      ];
-
-      perSystem = {
-        pkgs,
-        system,
-        ...
-      }: let
-        extraPackages = with pkgs; ( ripgrep );
+  outputs = { self, nixpkgs, nixvim, flake-utils, ... }@inputs:
+    let config = import ./config; # import the module directly
+    in flake-utils.lib.eachDefaultSystem (system:
+      let
         nixvimLib = nixvim.lib.${system};
+        pkgs = import nixpkgs { inherit system; };
         nixvim' = nixvim.legacyPackages.${system};
-        nixvimModule = {
+        nvim = nixvim'.makeNixvimWithModule {
           inherit pkgs;
-          module = import ./config; # import the module directly
-          # You can use `extraSpecialArgs` to pass additional arguments to your module files
-          extraSpecialArgs = {
-            # inherit (inputs) foo;
-          };
+          module = config;
         };
-        nvim = nixvim'.makeNixvimWithModule nixvimModule;
-      in {
+      in
+      {
+        formatter = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+
         checks = {
-          # Run `nix flake check .` to verify that your config is not broken
-          default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
+          default = nixvimLib.check.mkTestDerivationFromNvim {
+            inherit nvim;
+            name = "My nixvim configuration";
+          };
         };
 
         packages = {
           # Lets you run `nix run .` to start nixvim
           default = nvim;
         };
-      };
-    };
+
+        devShells.default = import ./shell.nix { inherit pkgs; };
+      });
 }
