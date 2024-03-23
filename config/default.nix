@@ -14,6 +14,7 @@
     ./trouble.nix
     ./undotree.nix
     ./git.nix
+    ./wilder.nix
   ];
 
   plugins = {
