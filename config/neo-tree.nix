@@ -26,7 +26,7 @@
     {
       mode = "n";
       key = "<leader><leader>";
-      action = ''
+      action = /* lua */ ''
         function() vim.cmd("Neotree position=float toggle reveal") end
       '';
       lua = true;

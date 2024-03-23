@@ -1,14 +1,18 @@
 {
   plugins = {
     fugitive.enable = true;
-    gitblame.enable = true;
+    gitsigns = {
+      enable = true;
+      currentLineBlame = true;
+      currentLineBlameOpts.delay = 100;
+    };
   };
 
   keymaps = [
     {
       mode = "n";
       key = "<leader>gs";
-      action = ''
+      action = /* lua */ ''
         vim.cmd.Git
       '';
       lua = true;
@@ -16,12 +20,9 @@
 
     {
       mode = "n";
-      key = "<leader>gb";
-      action = ''
-        function()
-          vim.cmd("GitBlameToggle")
-          vim.cmd("GitBlameToggle")
-        end
+      key = "<leader>gp";
+      action = /* lua */ ''
+        function() vim.cmd("Gitsigns preview_hunk") end
       '';
       lua = true;
     }

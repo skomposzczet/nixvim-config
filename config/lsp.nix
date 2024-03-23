@@ -1,16 +1,21 @@
 {
-  plugins.lsp-format.enable = true;
+  # plugins.lsp-format.enable = true;
   plugins.lsp = {
     enable = true;
 
-    onAttach = ''
+    onAttach = /* lua */ ''
       lsp.default_keymaps({buffer = bufnr})
     '';
     
     servers = {
+      rust-analyzer = {
+        enable = true;
+        installCargo = true;
+        installRustc = true;
+      };
       clangd.enable = true;
+      clangd.extraOptions.switchSourceHeader = 1;
       lua-ls.enable = true;
-      rust-analyzer.enable = true;
       nixd.enable = true;
       pylsp.enable = true;
     };
@@ -36,7 +41,7 @@
     {
       mode = "n";
       key = "<leader>h";
-      action = ''
+      action = /* lua */ ''
         function() vim.cmd("ClandgSwitchSourceHeader") end
       '';
       lua = true;

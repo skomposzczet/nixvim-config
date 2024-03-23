@@ -25,6 +25,7 @@
         system,
         ...
       }: let
+        extraPackages = with pkgs; ( ripgrep );
         nixvimLib = nixvim.lib.${system};
         nixvim' = nixvim.legacyPackages.${system};
         nixvimModule = {

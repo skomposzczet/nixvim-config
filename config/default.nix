@@ -20,4 +20,8 @@
     surround.enable = true;
     comment-nvim.enable = true;
   };
+
+  extraConfigLua = /* lua */ ''
+    print("It's Nvimin Time")
+  '';
 }

@@ -12,8 +12,10 @@
     {
       mode = "n";
       key = "<leader>ps";
-      action = ''
-        function() builtin.grep_string({ search = vim.fn.input("Grep > ") }); end
+      action = /* lua */ ''
+        function() 
+          require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") });
+        end
       '';
       lua = true;
     }

@@ -4,12 +4,12 @@
       enable = true;
       autoEnableSources = true;
       settings = {
-        snippet.expand = ''
+        snippet.expand = /* lua */ ''
           function(args)
             require("luasnip").lsp_expand(args.body)
           end
         '';
-        mapping.__raw = ''
+        mapping.__raw = /* lua */ ''
           cmp.mapping.preset.insert({
             ["<C-y>"] = cmp.mapping.confirm({ select = true }),
             ["<CR>"] = cmp.mapping.confirm(),

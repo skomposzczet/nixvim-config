@@ -50,8 +50,26 @@
     {
       mode = "n";
       key = "<leader>s";
-      action = "[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]";
+      action = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>";
       options.desc = "Shortcut to sed current word";
+    }
+    {
+      mode = "n";
+      key = "<leader>S";
+      action = ":%s/\\<<C-r><C-w>\\>//gI<Left><Left><Left>";
+      options.desc = "Shortcut to sed current word";
+    }
+    {
+      mode = "v";
+      key = "<leader>f";
+      action = "\"9y:%s/<C-r>9/<C-r>9/gI<Left><Left><Left>";
+      options.desc = "Shortcut to sed selected";
+    }
+    {
+      mode = "v";
+      key = "<leader>F";
+      action = "\"9y:%s/<C-r>9//gI<Left><Left><Left>";
+      options.desc = "Shortcut to sed selected";
     }
 
     {

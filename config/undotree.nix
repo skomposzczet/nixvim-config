@@ -7,7 +7,7 @@
     {
       mode = "n";
       key = "<leader>u";
-      action = ''
+      action = /* lua */ ''
         vim.cmd.UndotreeToggle
       '';
       lua = true;

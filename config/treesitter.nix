@@ -14,7 +14,6 @@
     ];
 
     ignoreInstall = [ "javascript" ];
-    indent = true;
     nixvimInjections = true;
   };
   plugins.treesitter-context.enable = true;
