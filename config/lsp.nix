@@ -18,6 +18,7 @@
       lua-ls.enable = true;
       nixd.enable = true;
       pylsp.enable = true;
+      bashls.enable = true;
     };
 
     keymaps.lspBuf = {
