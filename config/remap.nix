@@ -80,4 +80,22 @@
       options.desc = "Add execute permission to current file";
     }
   ];
+
+  userCommands = {
+    W = {
+      command = /* lua */ ''
+        vim.cmd("w")
+      '';
+    };
+    Q = {
+      command = /* lua */ ''
+        function() vim.cmd("q") end
+      '';
+    };
+    Wq = {
+      command = /* lua */ ''
+        function() vim.cmd("Wq") end
+      '';
+    };
+  };
 }
