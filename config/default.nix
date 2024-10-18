@@ -16,6 +16,7 @@
     ./git.nix
     ./wilder.nix
     ./spectre.nix
+    ./illuminate.nix
   ];
 
   plugins = {
