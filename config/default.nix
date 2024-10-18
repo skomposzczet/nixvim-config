@@ -17,6 +17,7 @@
     ./wilder.nix
     ./spectre.nix
     ./illuminate.nix
+    ./barbecue.nix
   ];
 
   plugins = {
