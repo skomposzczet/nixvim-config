@@ -13,19 +13,22 @@
 
     colorschemes.catppuccin = {
       enable = true;
-      flavour = "mocha";
-      transparentBackground = true;
-      showBufferEnd = true;
-      integrations = {
-        neotree = true;
-        indent_blankline.enabled = true;
+      settings = {
+        flavour = "mocha";
+        transparent_background = true;
+        show_end_of_buffer = true;
+        integrations = {
+          neotree = true;
+          indent_blankline.enabled = true;
+          treesitter = true;
+        };
       };
     };
 
     plugins = {
       indent-blankline = {
         enable = true;
-        indent.highlight = [
+        settings.indent.highlight = [
           "RainbowRed"
           "RainbowYellow"
           "RainbowBlue"

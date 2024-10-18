@@ -19,8 +19,9 @@
   ];
 
   plugins = {
-    surround.enable = true;
-    comment-nvim.enable = true;
+    vim-surround.enable = true;
+    comment.enable = true;
+    web-devicons.enable = true;
   };
 
   extraConfigLua = /* lua */ ''

@@ -40,7 +40,7 @@
     cmp-nvim-lsp.enable = true;
     luasnip = {
       enable = true;
-      extraConfig = {
+      settings = {
         enable_autosnippets = true;
       };
     };

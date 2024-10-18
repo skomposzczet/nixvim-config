@@ -3,22 +3,26 @@
   plugins.lsp = {
     enable = true;
 
-    onAttach = /* lua */ ''
-      lsp.default_keymaps({buffer = bufnr})
-    '';
+    # onAttach = /* lua */ ''
+    #   lsp.default_keymaps({buffer = bufnr})
+    # '';
     
     servers = {
-      rust-analyzer = {
+      rust_analyzer = {
         enable = true;
         installCargo = true;
         installRustc = true;
       };
       clangd.enable = true;
       clangd.extraOptions.switchSourceHeader = 1;
-      lua-ls.enable = true;
-      nixd.enable = true;
-      pylsp.enable = true;
+      lua_ls.enable = true;
+      nil_ls.enable = true;
+      pyright.enable = true;
       bashls.enable = true;
+      marksman.enable = true;
+      dockerls.enable = true;
+      
+      ts_ls.enable = true; # delete later
     };
 
     keymaps.lspBuf = {

@@ -3,8 +3,8 @@
     fugitive.enable = true;
     gitsigns = {
       enable = true;
-      currentLineBlame = true;
-      currentLineBlameOpts.delay = 100;
+      settings.current_line_blame = true;
+      settings.current_line_blame_opts.delay = 100;
     };
   };
 
