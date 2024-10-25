@@ -2,7 +2,7 @@
   plugins.treesitter = {
     enable = true;
     settings = {
-      ensureInstalled = [
+      ensure_installed = [
         "c"
         "cpp"
         "rust"
@@ -14,7 +14,8 @@
         "nix"
       ];
 
-      ignoreInstall = [ "javascript" ];
+      highlight.enable = true;
+      indent.enable = true;
     };
 
     nixvimInjections = true;
