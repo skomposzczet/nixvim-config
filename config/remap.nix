@@ -98,4 +98,13 @@
       '';
     };
   };
+
+  autoCmd = [
+    # open help window in vertical new split
+    {
+      event = "FileType";
+      pattern = "help";
+      command = "wincmd L";
+    }
+  ];
 }
