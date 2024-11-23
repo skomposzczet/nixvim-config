@@ -4,7 +4,7 @@
 
     keymaps = {
       addFile = "<leader>a";
-      navNext = "<C-h>";
+      navNext = "<C-y>";
       navPrev = "<C-t>";
       toggleQuickMenu = "<C-e>";
     };

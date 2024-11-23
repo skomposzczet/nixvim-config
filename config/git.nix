@@ -26,5 +26,23 @@
       '';
       lua = true;
     }
+
+    {
+      mode = "n";
+      key = "<leader>gr";
+      action = /* lua */ ''
+        function() vim.cmd("Gitsigns reset_hunk") end
+      '';
+      lua = true;
+    }
+
+    {
+      mode = "n";
+      key = "<leader>gS";
+      action = /* lua */ ''
+        function() vim.cmd("Gitsigns stage_hunk") end
+      '';
+      lua = true;
+    }
   ];
 }
