@@ -23,7 +23,7 @@
 
             "<C-e>" = /* lua */ "cmp.mapping.abort()";
             "<C-y>" = /* lua */ "cmp.mapping.confirm({select = true})";
-            "<Right>" = /* lua */ "cmp.mapping.confirm({select = true})";
+            "<S-Right>" = /* lua */ "cmp.mapping.confirm({select = true})";
             "<CR>" = /* lua */ "cmp.mapping.confirm({select = false})";
 
             "<C-f>" = /* lua */ ''
