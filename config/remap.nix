@@ -79,23 +79,44 @@
       options.silent = true;
       options.desc = "Add execute permission to current file";
     }
+
+    {
+      mode = "n";
+      key = "@";
+      action = "<cmd>execute \"noautocmd norm! \" . v:count1 . \"@\" . getcharstr()<cr>";
+      options.silent = true;
+      options.desc = "Fast macros";
+    }
+
+    {
+      mode = "x";
+      key = "@";
+      action = "<C-u>execute \"noautocmd '<,'>norm! \" . v:count1 . \"@\" . getcharstr()<cr>";
+      options.silent = true;
+      options.desc = "Fast macros";
+    }
   ];
 
   userCommands = {
     W = {
-      command = /* lua */ ''
-        vim.cmd("w")
-      '';
+      command = "w";
+      bang = true;
+      desc = "Write";
     };
     Q = {
-      command = /* lua */ ''
-        function() vim.cmd("q") end
-      '';
+      command = "q";
+      bang = true;
+      desc = "Quit";
     };
     Wq = {
-      command = /* lua */ ''
-        function() vim.cmd("Wq") end
-      '';
+      command = "wq";
+      bang = true;
+      desc = "Write and quit";
+    };
+    WQ = {
+      command = "wq";
+      bang = true;
+      desc = "Write and quit";
     };
   };
 
