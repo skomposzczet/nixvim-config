@@ -23,10 +23,7 @@
       bashls.enable = true;
       marksman.enable = true;
       dockerls.enable = true;
-      hls = {
-        enable = true;
-        installGhc = true;
-      };
+      gopls.enable = true;
 
       pylsp = {
         enable = true;
