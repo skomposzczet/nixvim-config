@@ -5,6 +5,8 @@ Nvim config done in glorious Nix declarative way. It is (almost exact) copy of [
 To run config run command:
 ```bash
 nix run github:skomposzczet/nixvim-config
+# or
+nix run . -- .
 ```
 ## Install as package
 Add repo to inputs:
