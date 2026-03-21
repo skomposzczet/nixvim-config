@@ -64,6 +64,7 @@
       "]d" = "goto_next";
     };
   };
+  plugins.fastaction.enable = true;
 
   keymaps = [
     {
@@ -74,6 +75,24 @@
       '';
       lua = true;
       options.desc = "Switch between header and source";
+    }
+
+    {
+      mode = ["x" "n"];
+      key = "<leader>fa";
+      action = /* lua */ ''
+          <cmd>lua require("fastaction").code_action()<CR>
+        '';
+      options.desc = "Fastaction code action.";
+    }
+
+    {
+      mode = "v";
+      key = "<leader>fa";
+      action = /* lua */ ''
+          <cmd>lua require("fastaction").range_code_action()<CR>
+        '';
+      options.desc = "Fastaction code action.";
     }
   ];
 }
