@@ -70,10 +70,9 @@
     {
       mode = "n";
       key = "<leader>h";
-      action = /* lua */ ''
+      action.__raw = /* lua */ ''
         function() vim.cmd("ClandgSwitchSourceHeader") end
       '';
-      lua = true;
       options.desc = "Switch between header and source";
     }
 

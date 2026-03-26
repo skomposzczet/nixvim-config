@@ -1,7 +1,9 @@
 {
   plugins.autoclose = {
     enable = true;
-    options.pairSpaces = true;
-    options.disableWhenTouch = true;
+    settings = {
+      options.pair_spaces = true;
+      options.disable_when_touch = true;
+    };
   };
 }

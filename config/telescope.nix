@@ -12,12 +12,11 @@
     {
       mode = "n";
       key = "<leader>ps";
-      action = /* lua */ ''
+      action.__raw = /* lua */ ''
         function() 
           require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") });
         end
       '';
-      lua = true;
     }
   ];
 }

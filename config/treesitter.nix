@@ -21,9 +21,11 @@
     nixvimInjections = true;
   };
   plugins.treesitter-context.enable = true;
+
+  # TODO bug: https://github.com/nix-community/nixvim/issues/4216
   plugins.treesitter-textobjects = {
     enable = true;
-    select = {
+    settings = {
       enable = true;
       lookahead = true;
       keymaps = {
@@ -39,46 +41,47 @@
         "al" = "@loop.outer";
         "at" = "@comment.outer";
       };
-    };
-    move = {
-      enable = true;
-      gotoNextStart = {
-        "]]" = "@function.outer";
-        "]m" = "@class.outer";
-      };
-      gotoNextEnd = {
-        "][" = "@function.outer";
-        "]M" = "@class.outer";
-      };
-      gotoPreviousStart = {
-        "[[" = "@function.outer";
-        "[m" = "@class.outer";
-      };
-      gotoPreviousEnd = {
-        "[]" = "@function.outer";
-        "[M" = "@class.outer";
-      };
-    };
-    swap = {
-      enable = true;
-      swapNext = {
-        "<leader>a" = "@parameters.inner";
-      };
-      swapPrevious = {
-        "<leader>A" = "@parameter.outer";
-      };
-    };
-    lspInterop = {
-      enable = true;
-      border = "single";
-      peekDefinitionCode = {
-        "<leader>df" = {
-          query = "@function.outer";
-          desc = "Peek definition outer function";
+      move = {
+        enable = true;
+        gotoNextStart = {
+          "]]" = "@function.outer";
+          "]m" = "@class.outer";
         };
-        "<leader>dF" = {
-          query = "@class.outer";
-          desc = "Peek definition outer class";
+        gotoNextEnd = {
+          "][" = "@function.outer";
+          "]M" = "@class.outer";
+        };
+        gotoPreviousStart = {
+          "[[" = "@function.outer";
+          "[m" = "@class.outer";
+        };
+        gotoPreviousEnd = {
+          "[]" = "@function.outer";
+          "[M" = "@class.outer";
+        };
+      };
+      swap = {
+        enable = true;
+        # TODO collision with harpoon
+        # swapNext = {
+        #   "<leader>a" = "@parameters.inner";
+        # };
+        swapPrevious = {
+          "<leader>A" = "@parameter.outer";
+        };
+      };
+      lspInterop = {
+        enable = true;
+        border = "single";
+        peekDefinitionCode = {
+          "<leader>df" = {
+            query = "@function.outer";
+            desc = "Peek definition outer function";
+          };
+          "<leader>dF" = {
+            query = "@class.outer";
+            desc = "Peek definition outer class";
+          };
         };
       };
     };

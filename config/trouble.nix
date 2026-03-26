@@ -8,50 +8,44 @@
     {
       mode = "n";
       key = "<leader>xx";
-      action = /* lua */ ''
+      action.__raw = /* lua */ ''
         function() require("trouble").toggle() end
       '';
-      lua = true;
     }
     {
       mode = "n";
       key = "<leader>xw";
-      action = /* lua */ ''
+      action.__raw = /* lua */ ''
         function() require("trouble").toggle("workspace_diagnostics") end
       '';
-      lua = true;
     }
     {
       mode = "n";
       key = "<leader>xd";
-      action = /* lua */ ''
+      action.__raw = /* lua */ ''
         function() require("trouble").toggle("document_diagnostics") end
       '';
-      lua = true;
     }
     {
       mode = "n";
       key = "<leader>xq";
-      action = /* lua */ ''
+      action.__raw = /* lua */ ''
         function() require("trouble").toggle("quickfix") end
       '';
-      lua = true;
     }
     {
       mode = "n";
       key = "<leader>xl";
-      action = /* lua */ ''
+      action.__raw = /* lua */ ''
         function() require("trouble").toggle("loclist") end
       '';
-      lua = true;
     }
     {
       mode = "n";
       key = "<leader>xr";
-      action = /* lua */ ''
+      action.__raw = /* lua */ ''
         function() require("trouble").toggle("lsp_references") end
       '';
-      lua = true;
     }
   ];
 }
