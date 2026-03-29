@@ -1,51 +1,48 @@
 {
   plugins.trouble = {
     enable = true;
-    settings.auto_close = true;
+    settings = {
+      auto_close = true;
+      focus = true;
+    };
   };
 
   keymaps = [
     {
       mode = "n";
-      key = "<leader>xx";
-      action.__raw = /* lua */ ''
-        function() require("trouble").toggle() end
-      '';
+      key = "<leader>tt";
+      action = "<cmd>Trouble diagnostics toggle<cr>";
+      options.desc = "Trouble diagnostics";
     }
     {
       mode = "n";
-      key = "<leader>xw";
-      action.__raw = /* lua */ ''
-        function() require("trouble").toggle("workspace_diagnostics") end
-      '';
+      key = "<leader>ts";
+      action = "<cmd>Trouble symbols toggle focus=false<cr>";
+      options.desc = "Trouble symbols";
     }
     {
       mode = "n";
-      key = "<leader>xd";
-      action.__raw = /* lua */ ''
-        function() require("trouble").toggle("document_diagnostics") end
-      '';
+      key = "<leader>tw";
+      action = "<cmd>Trouble diagnostics toggle filter.buf=0<cr>";
+      options.desc = "Troble buffer diagnostics";
     }
     {
       mode = "n";
-      key = "<leader>xq";
-      action.__raw = /* lua */ ''
-        function() require("trouble").toggle("quickfix") end
-      '';
+      key = "<leader>tq";
+      action = "<cmd>Trouble qflist toggle<cr>";
+      options.desc = "Trouble quickfix list";
     }
     {
       mode = "n";
-      key = "<leader>xl";
-      action.__raw = /* lua */ ''
-        function() require("trouble").toggle("loclist") end
-      '';
+      key = "<leader>to";
+      action = "<cmd>Trouble loclist toggle<cr>";
+      options.desc = "Trouble location list";
     }
     {
       mode = "n";
-      key = "<leader>xr";
-      action.__raw = /* lua */ ''
-        function() require("trouble").toggle("lsp_references") end
-      '';
+      key = "<leader>tl";
+      action = "<cmd>Trouble lsp toggle focus=false win.position=right<cr>";
+      options.desc = "Trouble LSP definitions / references / ...";
     }
   ];
 }
