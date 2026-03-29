@@ -17,6 +17,7 @@
           require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") });
         end
       '';
+      options.desc = "Telescope search project";
     }
   ];
 }

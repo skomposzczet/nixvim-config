@@ -18,6 +18,7 @@
     ./spectre.nix
     ./illuminate.nix
     ./barbecue.nix
+    ./which.nix
   ];
 
   plugins = {

@@ -38,7 +38,7 @@
 
     {
       mode = "n";
-      key = "<leader>gS";
+      key = "<leader>gt";
       action.__raw = /* lua */ ''
         function() vim.cmd("Gitsigns stage_hunk") end
       '';

@@ -10,6 +10,7 @@
       action.__raw = /* lua */ ''
         vim.cmd.UndotreeToggle
       '';
+      options.desc = "Toggle undotree";
     }
   ];
 }
