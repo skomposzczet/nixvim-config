@@ -13,15 +13,16 @@
     colorschemes.catppuccin = {
       enable = true;
       settings = {
-        flavour = "mocha";
+        flavour = "macchiato";
         transparent_background = true;
         show_end_of_buffer = true;
+        float.transparent = true;
 
         integrations = {
           cmp = true;
           gitsigns = true;
           neotree = true;
-          # which_key = true;
+          which_key = true;
           illuminate = {
             enabled = true;
             lsp = true;

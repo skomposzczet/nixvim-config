@@ -20,6 +20,8 @@
       listchars = "tab:--";
 
       cursorline = true;
+
+      winborder = "rounded";
     };
 
     clipboard.register = "unnamedplus";
