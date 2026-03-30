@@ -1,0 +1,41 @@
+diff --git a/autoload/wilder/renderer/popupmenu.vim b/autoload/wilder/renderer/popupmenu.vim
+index 878aaee..bdfe0dd 100644
+--- a/autoload/wilder/renderer/popupmenu.vim
++++ b/autoload/wilder/renderer/popupmenu.vim
+@@ -863,7 +863,11 @@ function! s:get_position(ctx, pos, dimensions) abort
+   endif
+ 
+   let l:cmdheight = wilder#renderer#get_cmdheight()
++
+   let l:row = &lines - l:cmdheight - a:dimensions.height
++  if !empty(&winborder) && &winborder !=# "none"
++    let l:row = l:row - 2
++  endif
+ 
+   return [l:row, l:col]
+ endfunction
+diff --git a/autoload/wilder/renderer/wildmenu_float_or_popup.vim b/autoload/wilder/renderer/wildmenu_float_or_popup.vim
+index c179513..e99c127 100644
+--- a/autoload/wilder/renderer/wildmenu_float_or_popup.vim
++++ b/autoload/wilder/renderer/wildmenu_float_or_popup.vim
+@@ -44,6 +44,9 @@ function! s:render_chunks(state, chunks) abort
+   let l:cmdheight = wilder#renderer#get_cmdheight()
+   if a:state.cmdheight != l:cmdheight
+     let l:row = &lines - l:cmdheight - 1
++    if !empty(&winborder) && &winborder !=# "none"
++      let l:row = l:row - 2
++    endif
+     call a:state.api.move(l:row, 0, 1, &columns)
+     let a:state.cmdheight = l:cmdheight
+   endif
+@@ -82,6 +85,9 @@ function! s:pre_hook(state, ctx) abort
+ 
+   let l:cmdheight = wilder#renderer#get_cmdheight()
+   let l:row = &lines - l:cmdheight - 1
++  if !empty(&winborder) && &winborder !=# "none"
++    let l:row = l:row - 2
++  endif
+   call a:state.api.move(l:row, 0, 1, &columns)
+ 
+   for l:Component in a:state.left + a:state.right
+
