@@ -1,5 +1,5 @@
 # nixvim-config
-Nvim config done in glorious Nix declarative way. It is (almost exact) copy of [this regular config](https://github.com/skomposzczet/nvim-config).
+Nvim config done in glorious Nix declarative way. It is *no longer* (almost exact) copy of [this regular config](https://github.com/skomposzczet/nvim-config).
 
 ## Try out
 To run config run command:
