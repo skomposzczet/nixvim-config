@@ -13,6 +13,7 @@
       renderer = lib.nixvim.mkRaw ''
         wilder.popupmenu_renderer({
           highlighter = wilder.basic_highlighter(),
+          highlights = { accent = "WilderMatch" },
         })
       '';
     };

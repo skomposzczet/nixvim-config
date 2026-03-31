@@ -8,6 +8,8 @@
       RainbowGreen.fg = "#98C379";
       RainbowViolet.fg = "#C678DD";
       RainbowCyan.fg = "#56B6C2";
+
+      WilderMatch.fg = "#ED8796";
     };
 
     colorschemes.catppuccin = {

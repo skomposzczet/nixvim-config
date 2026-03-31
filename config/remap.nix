@@ -95,6 +95,19 @@
       options.silent = true;
       options.desc = "Fast macros";
     }
+
+    {
+      mode = "v";
+      key = ">";
+      action = ">gv";
+      options.silent = true;
+    }
+    {
+      mode = "v";
+      key = "<";
+      action = "<gv";
+      options.silent = true;
+    }
   ];
 
   userCommands = {

@@ -44,8 +44,6 @@
           yapf.enabled = true;
         };
       };
-      
-      ts_ls.enable = true; # delete later
     };
 
     keymaps.lspBuf = {
